@@ -1925,9 +1925,72 @@ h1 {
     font-size: 8vw;
   }
 
+  .home {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "text"
+      "portrait"
+      "description"
+      "scroll";
+    padding-top: 100px;
+    height: auto;
+    row-gap: 30px;
+  }
+
   .hero-text {
+    position: static;
     width: 100%;
-    margin-left: 0;
+    text-align: center;
+    transform: none;
+    grid-area: text;
+    margin: 0;
+  }
+
+  .hero-portrait {
+    position: static;
+    width: 120px; /* Make portrait much smaller */
+    height: 120px;
+    margin: 0 auto;
+    grid-area: portrait;
+    z-index: 5;
+  }
+
+  .portrait-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .portrait-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Optional: makes it a circle */
+  }
+
+  .studio-description {
+    position: static;
+    width: 100%;
+    text-align: center;
+    grid-area: description;
+    margin: 0;
+    opacity: 1;
+  }
+
+  .scroll-indicator {
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    grid-area: scroll;
+    margin: 0;
+    padding-bottom: 20px;
+    opacity: 1;
   }
 
   .cmd-logo {
@@ -1941,12 +2004,6 @@ h1 {
 
   .lets-connect {
     font-size: 1.8rem;
-  }
-
-  .studio-description {
-    position: relative;
-    bottom: auto;
-    margin-top: 3rem;
   }
 
   .skills-logo {
@@ -2014,6 +2071,19 @@ h1 {
 }
 
 @media (max-width: 480px) {
+  .hero-content {
+    padding-top: 80px;
+  }
+
+  .hero-text {
+    margin-bottom: 30px;
+  }
+
+  .hero-portrait {
+    width: 160px;
+    margin-bottom: 30px;
+  }
+
   section {
     padding: 1rem;
   }
